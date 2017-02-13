@@ -4,8 +4,12 @@ object Challenge extends App {
 
   def solve(costOfHorizontal: Seq[Long], costOfVerticalCuts: Seq[Long])={
 
-    val orderedHorizontal = costOfHorizontal.sorted(Ordering[Long].reverse)
-    val orderedVertical = costOfVerticalCuts.sorted(Ordering[Long].reverse)
+    val orderedHorizontal  = costOfHorizontal.toArray
+    val orderedVertical = costOfVerticalCuts.toArray
+    util.Sorting.quickSort(orderedHorizontal)(Ordering[Long].reverse)
+    util.Sorting.quickSort(orderedVertical)(Ordering[Long].reverse)
+   // val orderedHorizontal = scala.util.Sorting.stableSort(costOfHorizontal.toArray)(Ordering[Long].reverse)
+   // val orderedVertical = scala.util.Sorting.quickSort(costOfHorizontal.toArray)(Ordering[Long].reverse)
     //greedy
     // always take the cut that costs the less
     // a cut across an already cut board costs cutCost * numberOfCuts
