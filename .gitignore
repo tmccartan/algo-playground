@@ -6,3 +6,5 @@
 **/.history
 **/.cache
 **/.idea/
+*.class
+
